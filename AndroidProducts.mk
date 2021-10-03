@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_I006D.mk
+    $(LOCAL_DIR)/twrp_odin.mk

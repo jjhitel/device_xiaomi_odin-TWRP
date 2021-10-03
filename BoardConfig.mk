@@ -26,13 +26,16 @@
 # Default device path for tree
 DEVICE_PATH := device/$(PRODUCT_BRAND)/$(TARGET_DEVICE)
 
-# Inherit from asus sm8250-common
+# Inherit from xiaomi sm8350-common
 -include device/$(PRODUCT_BRAND)/$(COMMON_SOC)-common/BoardConfigCommon.mk
 
 # Kernel prebuilts
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 
+# Workaround for error copying vendor files to recovery ramdisk
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+
 # TWRP specific build flags
-TW_LOAD_VENDOR_MODULES := "aw8697.ko focaltech_fts_zf.ko"
-TW_Y_OFFSET := 120
-TW_H_OFFSET := -120
+TW_LOAD_VENDOR_MODULES := "fts_touch_spi.ko goodix_fod.ko xiaomi_touch.ko"
