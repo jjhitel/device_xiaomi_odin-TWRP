@@ -38,4 +38,4 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 
 # TWRP specific build flags
-TW_LOAD_VENDOR_MODULES := "fts_touch_spi.ko goodix_fod.ko xiaomi_touch.ko"
+TW_LOAD_VENDOR_MODULES := "fts_touch_spi_k8.ko goodix_fod.ko xiaomi_touch.ko"
